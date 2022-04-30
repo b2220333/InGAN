@@ -45,8 +45,8 @@ def concat_images(images, margin, input_spot):
             bottom_right_corner_w = int(top_left_corner_w + w_sizes[i])
 
             if [i, j] == input_spot:
-                collage[top_left_corner_h - margin/2: bottom_right_corner_h + margin/2,
-                        top_left_corner_w - margin/2: bottom_right_corner_w + margin/2,
+                collage[int(top_left_corner_h - margin/2): int(bottom_right_corner_h + margin/2),
+                        int(top_left_corner_w - margin/2): int(bottom_right_corner_w + margin/2),
                         :] = [255, 0, 0]
             collage[top_left_corner_h:bottom_right_corner_h, top_left_corner_w:bottom_right_corner_w] = images[j][i]
 
