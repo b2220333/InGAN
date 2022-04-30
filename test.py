@@ -31,7 +31,7 @@ def test_one_scale(gan, input_tensor, scale, must_divide, affine=None, return_te
 
 
 def concat_images(images, margin, input_spot):
-    h_sizes = [im.shape[0] for im in zip(*images)[0]]
+    h_sizes = [im.shape[0] for im in list(zip(*images))[0]]
     w_sizes = [im.shape[1] for im in images[0]]
     h_total_size = np.sum(h_sizes) + margin * (len(images) - 1)
     w_total_size = np.sum(w_sizes) + margin * (len(images) - 1)
